@@ -1,11 +1,115 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Hello World Page</title>
-</head>
-<body>
-    <h1>Hello World!</h1>
-    <p>This is a simple HTML file displaying "Hello World".</p>
-</body>
-</html>
 
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description"
+    content="Seam carving is a popular technique for content aware image retargeting. It can be used to deliberately manipulate images, for example, change the GPS locations of a building or displace/remove roads in a satellite image.">
+  <meta property="og:title" content="SeeTheSeams: Localized Detection of Seam Carving Based Image Forgery in Satellite Imagery" />
+  <meta property="og:description" content="Localized Detection of Seam Carving Based Image Forgery in Satellite Imagery." />
+  <meta property="og:url" content="https://see-the-seams.github.io/" />
+  <meta property="og:image" content="https://see-the-seams.github.io//static/images/seetheseams.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:title" content="SeeTheSeams: Localized Detection of Seam Carving Based Image Forgery in Satellite Imagery">
+  <meta name="twitter:description" content="Localized Detection of Seam Carving Based Image Forgery in Satellite Imagery.">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="https://see-the-seams.github.io//static/images/seetheseams.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="NeRF, novel view synthesis, 3D Gaussians">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>SeeTheSeams</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script> -->
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Title -->
+    <h1 class="pt-5 title">SeeTheSeams: Localized Detection of Seam Carving Based Image Forgery in Satellite Imagery</h1>
+    <div class="d-flex flex-row justify-content-center">
+      Chandrakanth Gudavalli, Erik Rosten, Lakshmanan Nataraj, Shivkumar Chandrasekaran, B. S. Manjunath
+    </div>
+
+    <div class="w-100 d-flex flex-row justify-content-center mt-4 gap-2">
+      <!-- Paper PDF -->
+      <a href="https://openaccess.thecvf.com/content/CVPR2022W/WMF/html/Gudavalli_SeeTheSeams_Localized_Detection_of_Seam_Carving_Based_Image_Forgery_in_CVPRW_2022_paper.html" target="_blank" class="btn btn-dark" role="button">
+        <span class="icon">
+          <i class="openaccess"></i>
+        </span>
+        <span>Paper</span>
+      </a>
+
+
+      <!-- Youtube Video -->
+      <a href="https://www.youtube.com/watch?v=igpq3CCR85U" target="_blank" class="btn btn-dark" role="button">
+        <span class="icon">
+          <i class="fas fa-video"></i>
+        </span>
+        <span>Youtube Video</span>
+      </a>
+
+    </div>
+
+
+    <!-- Teaser -->
+    <img src="static/images/seetheseams.png" class="img-fluid w-100 mt-2 mb-3" alt="" />
+        <source src="static/images/seetheseams.png" type="image/png">
+   
+
+    <!-- Abstract -->
+    <h2>Abstract</h2>
+    <p class="mb-4">
+      Seam carving is a popular technique for content aware image retargeting. It can be used to deliberately manipulate images, for example, change the GPS locations of a building or displace/remove roads in a satellite image. This paper proposes a novel approach for detecting and localizing seams in such images. While there are methods to detect seam carving based manipulations, this is the first time that robust localization and detection of seam carving forgery is made possible. We also propose a seam localization score (SLS) metric to evaluate the effectiveness of localization. The proposed method is evaluated extensively on a large collection of images from different sources, demonstrating a high level of detection and localization performance across these datasets. The code and datasets curated during this work will be released to the public.
+    </p>
+
+    <h2>Proposed Approach</h2>
+    <p> we describe our approach for localized seam detection. At its core, the problem can be formulated as binary classification, where we would ultimately like to predict whether the given image is seam carved or not. In order
+      to achieve this, we propose a two stage framework. 
+      Stage 1- Localization of Seams 
+      Stage 2- Classification</p>
+    <img src="static/images/architecture.png" class="img-fluid w-100 mt-2 mb-3" alt=" Overview of proposed two stage framework for localized seam carving detection.
+    " />
+    <div class="border w-100 mb-4">
+    </div>
+
+  
+
+    <h2>Dataset</h2>
+    <p>In this section, we give a brief overview on the characteristics of source datasets used, and how we generated our
+      forgery datasets. Three common satellite imagery datasets
+      (xView, xBD, and Orbview-3) have been used
+      to evaluate our method</p>
+
+    <img src="static/images/data.png" class="img-fluid w- mt-2 mb-3" alt="" />
+    <div class="border w-100 mb-4">
+     
+    </div>
+
+    <!-- Point Clouds -->
+    <h2>Conclusion</h2>
+    <p>In this paper, we proposed a method to detect and localize seam carving based manipulations in satellite images. We use a two stage approach that first localizes removed/inserted seams via pixelwise classification and then
+      performs a final classification if an image has been seam carved. We enable localization of seams as well as a generalizable framework across different datasets and seam carving techniques. Finally, we detailed the curation of three
+      unique, large seam carving satellite image datasets that will
+      be released to the public.</p>
+
+    <!-- Footer -->
+    <footer class="border-top mt-5 py-4">.
+    </footer>
+  </div>
+</body>
+
+</html>
